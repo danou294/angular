@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, HostListener} from '@angular/core';
 import { OnInit } from '@angular/core';
+
 
 import { Pokemon } from "./pokemon";
 import { POKEMONS } from "./mock-pokemons";
@@ -8,7 +9,6 @@ import { POKEMONS } from "./mock-pokemons";
     selector: 'pokemon-app',
     templateUrl: './app/app.component.html',
 })
-
 
 export class AppComponent {
     private pokemons: Pokemon[];
@@ -24,4 +24,5 @@ export class AppComponent {
         alert("vous avez cliqué sur " + pokemon.name)
     }
 }
+
 
