@@ -10,30 +10,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var mock_pokemons_1 = require("./pokemon/mock-pokemons");
+var mock_pokemons_1 = require("./mock-pokemons");
 var router_1 = require("@angular/router");
-var AppComponent = /** @class */ (function () {
-    function AppComponent(router) {
+var ListPokemonComponent = /** @class */ (function () {
+    function ListPokemonComponent(router) {
         this.router = router;
-        this.title = "liste des pokemons";
-        this.age = 12;
+        this.pokemons = null;
     }
-    AppComponent.prototype.ngOnInit = function () {
+    ListPokemonComponent.prototype.ngOnInit = function () {
         this.pokemons = mock_pokemons_1.POKEMONS;
     };
-    AppComponent.prototype.selectPokemon = function (pokemon) {
-        alert("vous avez cliqué sur " + pokemon.name);
+    ListPokemonComponent.prototype.selectPokemon = function (pokemon) {
+        console.log('Vous avez selectionné ' + pokemon.name);
         var link = ['/pokemon', pokemon.id];
         this.router.navigate(link);
     };
-    AppComponent = __decorate([
+    ListPokemonComponent = __decorate([
         core_1.Component({
-            selector: 'pokemon-app',
-            templateUrl: './app/app.component.html',
+            selector: 'list-pokemon',
+            templateUrl: './pokemon/list-pokemon.component.html'
         }),
         __metadata("design:paramtypes", [router_1.Router])
-    ], AppComponent);
-    return AppComponent;
+    ], ListPokemonComponent);
+    return ListPokemonComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.ListPokemonComponent = ListPokemonComponent;
+//# sourceMappingURL=list-pokemon.component.js.map
